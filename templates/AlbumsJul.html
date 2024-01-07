@@ -1,68 +1,101 @@
-{{define "jul"}}
+{{define "home"}}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html>
+<head> 
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="/CSS/icons/logo-airbnb-1536.png">
     <link rel="stylesheet" type="text/css" href="/assets/styles/jul.css" >
-    <title>Albums de jul</title>
+    <title>Jul</title>
 </head>
-<body>
-    
-    <div class="SYNOPSIS"> 
-        <div id="SynopsisImage">
-         <a href="/welcome"> <img src="/assets/icons/Spotify-Emblema.png" alt="logo musice"> </a>
-    </div>
+<body >
 
-        <div class="Start">
-   <span>C'est</span>
-   <span>Marseille</span>
-   <span>bébé</span>
-   <img src="/assets/icons/music_note_FILL0_wght400_GRAD0_opsz24.png" alt="loupe">
-        </div>
-   
-     <div id="infosProfil">
-       <p>M</p> 
-       <img src="/CSS/icons/WORLD.png" alt="UNE MAP">
-
-          <div id="LoginProfil">
-            <img src="/CSS/icons/PROFIL.png" alt="Profil_Icon">
-          </div>
-
+	<!-- ELEMENTS EN-TETE -->
+	<div id="HEAD">
+     <div class="SYNOPSIS"> 
+		 <div id="SynopsisImage">
+      	<a href="/welcome"> <img src="assets/icons/Spotify-Emblema.png" alt="logo-airbnb-1536"> </a>
      </div>
+
+     <div class="Start">
+        <span>C'est</span>
+        <span>Marseille</span>
+        <span>bébé</span>
+        <img src="/assets/icons/music_note_FILL0_wght400_GRAD0_opsz24.png" alt="loupe">
+             </div>
+        
+	
+      <div id="infosProfil">
+		<p>Ici,Tous les albums de jul</p> 
+
+     <div id="infosProfil">
+        <img src="/assets/icons/music_note_FILL0_wght400_GRAD0_opsz24.png" alt="loupe">
+        <span>Sortie</span>
+     </div>
+
+   </div>
+ </div>
+ 
+<div class="Icons">
+
+<div class="DecoIcon">
+	<img src="../CSS/icons/castle.png" alt="castle">
+	<p>Chateaux</p>
 </div>
 
-    <div class="AllProduct">
+  <div class="DecoIcon">
+<img src="../CSS/icons/floods.png" alt="floods">
+<p>Sur l'eau</p> 
+</div>
+
+<div class="DecoIcon">
+<img src="../CSS/icons/tiny-house.png" alt="tiny-house">
+<p>Tiny-house</p>
+</div>
+	
+</div>
+
+</div>
+
+
+<!-- AFFICHAGES  DES DIFFERENTS LIEUX(HOTELS, MAISONS...) -->
+	<div class="AllProduct">
         {{range .Items}}
-            <div class="PRODUCT">
-                {{$name := .Name}}
+        <div class="PRODUCT">
+            {{$name := .Name}}
+        
+		<div class="IMAGE">
+			<div id="Like"><img src="/assets/icons/coeur.png" ></div>
+	
+            {{range $index, $element := .Images}}
+            {{if eq 0 $index}}
+            <div id="img">   <img src="{{$element.Url}}" alt="Jul Album Image: {{$name}}" style="width: 10rem"/></div>
+            {{end}}
+          {{end}}
+	    </div>
 
-                <div class="IMAGE">
-                    <div id="Like"> <img src="/assets/icons/coeur.png" ></div>
-		
-                    {{range $index, $element := .Images}}
-                        {{if eq 0 $index}}
-                            <img src="{{$element.Url}}" alt="Jul Album Image: {{$name}}" style="width: 10rem"/>
-                        {{end}}
-                    {{end}}
-                </div>
+		     <div id="TEXT"> 
 
-                <div class="TEXT">
-                    <h3>{{$name}}</h3>
-                    <div>
-                        <div>Sorti le : {{.ReleaseDate}}</div>
-                      
-                     <div class="STARS"> 
-                            <span>{{.TotalTracks}} pistes
-                            <img src="/assets/icons/music_note_FILL0_wght400_GRAD0_opsz24.png" alt="icone musique">
-                        </span>
-                    </div>
+		 <h3><b> {{$name}}</b></h3> 
+		  <p>Sorti le : {{.ReleaseDate}}</p>
+               <div class="STARS"> 
+            <p>{{.TotalTracks}} pistes</p>
+            <img src="/assets/icons/music_note_FILL0_wght400_GRAD0_opsz24.png" alt="icone musique">
                 </div>
-            </div>
-        {{end}}
-    </div>
-    
+	    </div>
+	</div>
+		{{end}}  
+ 
+	</div>
+
+
+
+
+<div id="Bottom">
+	<p><b>Ecouter sur Spotify</b>  </p>
+	<img src="/assets/icons/Spotify-Emblema.png" alt="logo music">
+	</div>
+
 </body>
 </html>
-
 {{end}}

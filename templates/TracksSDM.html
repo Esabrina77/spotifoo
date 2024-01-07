@@ -11,9 +11,8 @@
 </head>
 <body>
     <h1>MUSIQUE DE SDM </h1>
-    <h2>{{.Name}}</h2>
+        <h2>{{.Name}}</h2>
     
-
     {{ $name := .Name }}
     <div class="album-img">
         {{range $index, $element := .Album.Images}}
@@ -31,9 +30,9 @@
             {{end}}
         </p>
         <p>Date de sortie: {{.Album.ReleaseDate}}</p>
-        <a href="{{.Album.ExternalUrls.Spotify}}">Ecouter sur Spotify</a>
+        <a href="{{.Album.ExternalUrls.Spotify}}">Ecouter sur Spotify</a>   
     </div>
-
+    <div id="gif"><img src="/assets/icons/listening-musica.gif" alt="loupe"></div> 
 </body>
 </html>
 {{end}}
