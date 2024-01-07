@@ -61,15 +61,16 @@ func JulAlbumHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("ERREUR LORS DE LA RECUPERATION DES ALBUMS DE JUL")
 	}
 	//Analyse des reponses json
-	var albums []manager.Album
-	err = json.Unmarshal(body, &albums)
+	var response []manager.AlbumResponse
+	err = json.Unmarshal(body, &response)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Réponse : Charger et exécuter le template avec les données d'albums
-	initTemplate.Temp.ExecuteTemplate(w, "jul", albums)
+	initTemplate.Temp.ExecuteTemplate(w, "jul", response)
+
 }
 
 // endoint pour la page de la musique "Bolide allemand"
