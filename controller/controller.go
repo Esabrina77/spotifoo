@@ -11,9 +11,11 @@ import (
 	"time"
 )
 
+const Port = "localhost:8080"
+
 // requete Get vers l'api de spotify
 // et reception des données obtenues
-func MakeApiRequest(urtl string) ([]byte, error) {
+func MakeApiRequest(url string) ([]byte, error) {
 	client := http.Client{
 		Timeout: time.Second * 10,
 	}
@@ -60,7 +62,7 @@ func julAlbumHandler(w http.ResponseWriter, r *http.Request) {
 	err = json.Unmarshal(body, &albums)
 
 	if err != nil {
-		return nil, err
+		log.Fatal(err)
 	}
 
 	// Réponse : Charger et exécuter le template avec les données d'albums
@@ -72,8 +74,7 @@ func SdmTrackHandler(w http.ResponseWriter, r *http.Request) {
 
 	//requete vers api se spotify pour obtenir
 	//les infos de la musique "bolide allemand"
-
-	//ID Du titre "bolide allemand " = 0EzNyXyU7gHzj2TN8qYThj
+	//---->> ID Du titre "bolide allemand " = 0EzNyXyU7gHzj2TN8qYThj
 	url := "https://api.spotify.com/v1/tracks/0EzNyXyU7gHzj2TN8qYThj"
 
 	body, err := MakeApiRequest(url)
@@ -83,13 +84,13 @@ func SdmTrackHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("ERREUR LORS DE LA RECUPERATION DES ALBUMS DE JUL")
 	}
 	//Analyse des reponses json
-	var albums []manager.Album
-	err = json.Unmarshal(body, &albums)
+	var track manager.Tracks
+	err = json.Unmarshal(body, &track)
 
 	if err != nil {
-		return nil, err
+		log.Fatal(err)
 	}
 
-	// Réponse : Charger et exécuter le template avec les données d'albums
-	initTemplate.Temp.ExecuteTemplate(w, "jul", albums)
+	// Réponse : Charger et exécuter le template avec les données du titre
+	initTemplate.Temp.ExecuteTemplate(w, "sdm", track)
 }
