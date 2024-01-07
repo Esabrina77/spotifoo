@@ -13,9 +13,11 @@ import (
 
 const Port = "localhost:8080"
 
+var token = "BQAR39bZyV79MZfqpvxdzLG0z0V2z644LEEiylSlREvcSqdoa95yZspcmPMe6Y9zdk_MhQnfj2o2QJ4pJ0sVe3rLgDikA4Ko0UdPssE7qMiwjJ0g41E"
+
 // requete Get vers l'api de spotify
 // et reception des données obtenues
-func MakeApiRequest(url string) ([]byte, error) {
+func MakeApiRequest(url string, token string) ([]byte, error) {
 	client := http.Client{
 		Timeout: time.Second * 10,
 	}
@@ -25,9 +27,8 @@ func MakeApiRequest(url string) ([]byte, error) {
 	}
 
 	//gestion du token (en-tete d'authetification)
-	token := "BQAR39bZyV79MZfqpvxdzLG0z0V2z644LEEiylSlREvcSqdoa95yZspcmPMe6Y9zdk_MhQnfj2o2QJ4pJ0sVe3rLgDikA4Ko0UdPssE7qMiwjJ0g41E"
 
-	req.Header.Set("Authorization", "Bearer"+token)
+	req.Header.Set("Authorization", "Bearer "+token)
 	res, err := client.Do(req)
 	if err != nil {
 		return nil, err
@@ -53,7 +54,7 @@ func JulAlbumHandler(w http.ResponseWriter, r *http.Request) {
 	//ID DE Jul = 3IW7ScrzXmPvZhB27hmfgy
 	url := "https://api.spotify.com/v1/artists/3IW7ScrzXmPvZhB27hmfgy/albums"
 
-	body, err := MakeApiRequest(url)
+	body, err := MakeApiRequest(url, token)
 
 	if err != nil {
 		log.Fatal(err)
@@ -79,7 +80,7 @@ func SdmTrackHandler(w http.ResponseWriter, r *http.Request) {
 	//---->> ID Du titre "bolide allemand " = 0EzNyXyU7gHzj2TN8qYThj
 	url := "https://api.spotify.com/v1/tracks/0EzNyXyU7gHzj2TN8qYThj"
 
-	body, err := MakeApiRequest(url)
+	body, err := MakeApiRequest(url, token)
 
 	if err != nil {
 		log.Fatal(err)
