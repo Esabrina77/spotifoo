@@ -1,3 +1,5 @@
+/* Styles pour l'en-tête */
+
 *{
   margin: 0;
   padding: 0;
@@ -8,31 +10,31 @@
 JUSTE POUR POUVOIR LES DIFFERENCIER FACILEMENT */
 
 body{
-  background-color: rgb(95, 92, 89);
 font-family: Georgia, 'Times New Roman', Times, serif;
 position: relative;
 display: flex;
  flex-direction: column;
 }
-
-/* CONTENU DE L'EN-TETE FIXE */
-#HEAD{
-z-index: 1;
-padding: 0 20px;
-position: fixed;
-display: flex;
-width: 100%;
-height: auto;
-background-color: #000;
-color: #fff;
-padding: 20px;
-flex-direction: column;
-}
 .SYNOPSIS {
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #000000;
+  padding: 20px;
+  color: #fff;
 }
+.SYNOPSIS span{
+  padding: 0 10px;
+  border-right: 2px solid rgb(43, 153, 48);
+}
+.SYNOPSIS span:last-child{
+  border-right:none;
+}
+
 
 .Start {
   font-size: 24px;
@@ -40,29 +42,30 @@ flex-direction: column;
   text-transform: uppercase;
 }
 
+.Start img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+}
+
 #infosProfil {
   display: flex;
   align-items: center;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  justify-content: space-between;
+  border-style: groove;
 }
 
 #infosProfil img {
-  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
 
-/* Styles pour les icônes */
-.Icons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.DecoIcon {
-  text-align: center;
-}
-
-.DecoIcon img {
-  width: 100px;
-  height: 100px;
+#infosProfil span {
+  font-size: 25px;
 }
 
 /* Styles pour les produits */
@@ -76,13 +79,20 @@ flex-direction: column;
 .PRODUCT {
   width: calc(33.33% - 20px);
   margin-bottom: 20px;
-  background-color: #f9f9f9;
+  background-color: #f7e4e4;
   padding: 20px;
   box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.PRODUCT:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .IMAGE {
   position: relative;
+  margin-bottom: 10px;
 }
 
 #Like {
@@ -93,24 +103,51 @@ flex-direction: column;
 
 #img img {
   width: 100%;
+  border-radius: 8px;
 }
 
 #TEXT {
   margin-top: 10px;
 }
 
+#TEXT h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#TEXT p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
 /* Style du bouton de bas de page */
 #Bottom {
   text-align: center;
-  margin-top: 20px;
+  background-color: rgb(97, 83, 83);
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-style: groove;
+  border-radius: 50px;
+  width: 200px;
+  height: auto;
+  padding: 2px 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #Bottom p {
   font-size: 18px;
+  margin-bottom: 20px;
+ 
 }
 
 #Bottom img {
   width: 50px;
   height: 50px;
-  margin-top: 10px;
+}
+a{
+  text-decoration: none;
 }

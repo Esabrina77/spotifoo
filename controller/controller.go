@@ -14,7 +14,7 @@ import (
 const Port = "localhost:8080"
 
 // LE TOKEN EXPIRE APRES CHAQUE 3600sec soit  1H
-var token = "BQBBWwI8Ac5mIopB-xGzFll41mqyAggPufOXYrkTWwfNszlf3XUQLHAwGrURz2WEYM7Ga26lJBqZZBt2Pss5dwmfQrf8lzs2I3okbxWWJgb2rZbF9qk"
+var token = "BQBLzyK_UOk-hDc2yIDh9fNCwVCtR4PzEqXUuIMs8GaqUpymwSt0zOg6e3eiESAmD4gpkwASl7OBOGH7ZuBWynR0DXLpFD3viXs-KfdhauqRsXXzbCw"
 
 // requete Get vers l'api de spotify
 // et reception des données obtenues
