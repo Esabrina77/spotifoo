@@ -8,6 +8,7 @@
 JUSTE POUR POUVOIR LES DIFFERENCIER FACILEMENT */
 
 body{
+  background-color: rgb(95, 92, 89);
 font-family: Georgia, 'Times New Roman', Times, serif;
 position: relative;
 display: flex;
@@ -22,183 +23,94 @@ position: fixed;
 display: flex;
 width: 100%;
 height: auto;
-background-color: rgb(255,255,255);
+background-color: #000;
+color: #fff;
+padding: 20px;
 flex-direction: column;
 }
-.SYNOPSIS{
-width: 100%;
-height: auto;
-display: flex;
-align-items: center;
-justify-content: space-between;
-border-bottom: groove 2px;
-
-}
-.SYNOPSIS span{
-padding: 0 10px;
-border-right: 2px solid rgb(0, 0, 0);
-}
-.SYNOPSIS span:last-child{
-border-right:none;
-}
-#SynopsisImage img{
-width: 120px;
-height: 80px;
+.SYNOPSIS {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.Start{
-display: flex;
-justify-content: center;
-align-items: center;
-height: auto;
-padding:5px;
-border: 3px;
-border-color: blue;
-box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-border-radius: 50px;
-}
-.Start img{
-border-radius: 50%;
-width: 30px;
-height: 30px;
+.Start {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
-/* ESPACE PROFIL UTILISATEUR */
-#infosProfil{
-display: flex;
-
-align-items: center;
-width: auto;
-height: auto;
-padding: 5px;
-justify-content: space-between;
-border-style: groove;
-}
-#LoginProfil{
-border-radius: 50%;
-width: auto;
-}
-#LoginProfil img{
-border-radius: 50%;
-width: 40px;
-height: 40px;
+#infosProfil {
+  display: flex;
+  align-items: center;
 }
 
-
-
-/* ICONES CARACTERISTIQUES DE DIFFERENTS LIEUX */
-.Icons{
-width: 100%;
-display: flex;
-justify-content: space-between;
-flex-wrap: nowrap;
-margin-top: 10px;
-padding-bottom: 5px;
-}
-.Icons img{
-width: 30px;
-height: 30px;
-}
-.DecoIcon{
-gap: 5px;
-font-size: 10px;
-display:flex;
-align-items: center;
-flex-direction: column;
-}
-a{
-text-decoration: none;
-color: black;
+#infosProfil img {
+  margin-right: 10px;
 }
 
-
-/* AFFICHAGE DE L ENSEMBLE DES LIEUX ET LEURS DESCRIPTIONS */
-.AllProduct{
-margin-top: 160px; /* vu que le js n'intervient pas encore,on va le positionner dynamiquement */
-flex: 1;
-display: flex;
-flex-direction: row;
-justify-content: center;
-flex-wrap: wrap;
-}
-.PRODUCT{
-width: auto;
-display: flex;
-flex-direction: column;
-margin-right: 20px;
-margin-bottom: 20px;
-}
-.PRODUCT img:last-child{
-margin-right: 0;
+/* Styles pour les icônes */
+.Icons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-
-/* /LES IMAGES DE CHAQUE LIEUX  */
-.IMAGE{
-position: relative;
-}
-.IMAGE img{
-width: 350px;
-height: 255px;
-border-radius: 20px;
+.DecoIcon {
+  text-align: center;
 }
 
-/* POSITION DU COEUR (LIKE) */
-#Like{
-position: absolute;
-top: 0;
-right: 0;
-}
-#Like img{
-width: 50px;
-height: 50px;
+.DecoIcon img {
+  width: 100px;
+  height: 100px;
 }
 
-/* ELMENTS DESCRIPTIFS DE CHAQUE LIEUX */
-#TEXT{
-padding: 0 5px;
-position: relative;
-display: flex;
-flex-direction: column;
-}
-#TEXT p{
-margin-bottom: 10px;
+/* Styles pour les produits */
+.AllProduct {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-/* L ETOILE DE NOTATION DU LIEU */
-.STARS{
-position: absolute;
-display: flex;
-font-size: 12px;
-top: 0;
-right: 5%;
-}
-.STARS img{
-margin: 2px;
-width: 20px;
-height: 20px;
+.PRODUCT {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-/* LE BOUTON FIXE AFFICHE TOUT EN BAS DE LA PAGE */
-#Bottom{
-background-color: rgb(97, 83, 83);
-position: fixed;
-display: flex;
-justify-content: space-around;
-align-items: center;
-border-style: groove;
-border-radius: 50px;
-width: 200px;
-height: auto;
-
-
-margin-bottom: 20px;
-padding: 2px 5px;
-bottom: 0;
-left: 50%;
-transform: translateX(-50%);
+.IMAGE {
+  position: relative;
 }
-#Bottom img{
-width: 30px;
-height: 30px;
+
+#Like {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#img img {
+  width: 100%;
+}
+
+#TEXT {
+  margin-top: 10px;
+}
+
+/* Style du bouton de bas de page */
+#Bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#Bottom p {
+  font-size: 18px;
+}
+
+#Bottom img {
+  width: 50px;
+  height: 50px;
+  margin-top: 10px;
 }

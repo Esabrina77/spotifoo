@@ -26,9 +26,7 @@ type AlbumsData struct {
 		Href   string `json:"href"`
 		Id     string `json:"id"`
 		Images []struct {
-			Height int    `json:"height"`
-			Url    string `json:"url"`
-			Width  int    `json:"width"`
+			Url string `json:"url"`
 		} `json:"images"`
 		Name                 string `json:"name"`
 		ReleaseDate          string `json:"release_date"`
