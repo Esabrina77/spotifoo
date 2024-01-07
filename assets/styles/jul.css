@@ -10,7 +10,7 @@ color: white;
 background-color: sienna;
 }
 
-.AllProduct{
+.RESULTS{
     margin-top: 160px; /* vu que le js n'intervient pas encore,on va le positionner dynamiquement */
     flex: 1;
     display: flex;

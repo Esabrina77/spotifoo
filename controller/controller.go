@@ -13,7 +13,7 @@ import (
 
 const Port = "localhost:8080"
 
-var token = "BQC2rtfEC6C1dNd-MFK0CxP7oF3vPZivtwqbpgiY3Sa_-BDyce0oqV7WGBgM6ZIVkqpd7LdtNm8RkhZsHMA3ZYA3HMCDZeuq1zsUrlFMsYY66WIiogY"
+var token = "BQB2GVi5ec71FHA1qrQ7BZIn1Ic2kZ5bcztOpsYUQfUIWRdm0US9RXeebKvYvWELE_c3Vz3y8REtSzldkd7OXJTsxeLB4KcxgNdfeiPGOCEEgVKGdJA"
 
 // requete Get vers l'api de spotify
 // et reception des données obtenues
