@@ -9,12 +9,13 @@
 </head>
 <body>
     <h1>LES ALBUMS DE Jul poto!!</h1>
-    {{range .}}
+    <h2>{{.Artist}}</h2>
+    {{range.}}
       <div> 
           <h2>{{.Name}}</h2>
-          <img src="{{.CoverImage}}" alt="image de couverture de l'ALBUM">
+          <img src="{{.Images}}" alt="image de couverture de l'ALBUM">
           <h3>Date de sortie: {{.ReleaseDate}}</h3>
-          <h3>Nombre de Musiques: {{.NumTracks}}</h3>
+          <h3>Nombre de Musiques: {{.TotalTracks}}</h3>
       </div>
     {{end}}
 </body>

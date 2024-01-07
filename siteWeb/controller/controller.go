@@ -13,7 +13,7 @@ import (
 
 const Port = "localhost:8080"
 
-var token = "BQAR39bZyV79MZfqpvxdzLG0z0V2z644LEEiylSlREvcSqdoa95yZspcmPMe6Y9zdk_MhQnfj2o2QJ4pJ0sVe3rLgDikA4Ko0UdPssE7qMiwjJ0g41E"
+var token = "BQAQr0eWSIwZ_H-zO_KQY4Ds0qoAXouvnwTJcJz8i0y8ONhSx0i1AehCi7FheyAoJlS1APfVcL9gJKFCL7XifGeTPIVOMR4aOkVCJ5OOvOEMPONwgZ8"
 
 // requete Get vers l'api de spotify
 // et reception des données obtenues
@@ -61,15 +61,23 @@ func JulAlbumHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("ERREUR LORS DE LA RECUPERATION DES ALBUMS DE JUL")
 	}
 	//Analyse des reponses json
-	var response []manager.AlbumResponse
+	var response manager.AlbumResponse
 	err = json.Unmarshal(body, &response)
 
 	if err != nil {
 		log.Fatal(err)
 	}
+	for _, album := range response.Albums {
+		fmt.Println("Nom de l'album :", album.Name)
+		fmt.Println("Artiste :", album.Artist.Name)
+		fmt.Println("Date de sortie :", album.ReleaseDate)
+		fmt.Println("Nombre total de pistes :", album.TotalTracks)
+		fmt.Println("URL Spotify :", album.ExternalUrls.Spotify)
+		fmt.Println("---")
+	}
 
 	// Réponse : Charger et exécuter le template avec les données d'albums
-	initTemplate.Temp.ExecuteTemplate(w, "jul", response)
+	initTemplate.Temp.ExecuteTemplate(w, "jul", response.Albums)
 
 }
 
