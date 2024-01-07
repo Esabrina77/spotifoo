@@ -1,0 +1,310 @@
+{
+	"info": {
+		"_postman_id": "83ce5e64-e8e2-4eea-8efc-03bedda51869",
+		"name": "SPOTIFY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32151209"
+	},
+	"item": [
+		{
+			"name": "searchJul",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAVTTEOawfC0knpCaT1Ak88Sg_jLLXhCoxM-v289suiTQvwsSxlZuoSfUTUG5SD9LRe3KK6hJr7K_4elpP_aZDBVSwRFVn4cfqvtiUxzXHJWAkI7Ao",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/search?q=jul&type=artist&limit=3&market=fr",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "jul"
+						},
+						{
+							"key": "type",
+							"value": "artist"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "market",
+							"value": "fr"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAlbumsJul",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAVTTEOawfC0knpCaT1Ak88Sg_jLLXhCoxM-v289suiTQvwsSxlZuoSfUTUG5SD9LRe3KK6hJr7K_4elpP_aZDBVSwRFVn4cfqvtiUxzXHJWAkI7Ao",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/artists/3IW7ScrzXmPvZhB27hmfgy/albums",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"artists",
+						"3IW7ScrzXmPvZhB27hmfgy",
+						"albums"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findTracksAlbumJul",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQCMfqx0AiZUaK7n63pLMZKauHAQr8NWL72r-wzW2-ga6jMGDsx4iED4NetvLEOYMuxHSsnLNzK0EeqoHyWLDg8Fue_JclQ1R_2c9dD2J5RLvBJXLb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/albums/1WYGwCvsfFrr7kuQcfNnJr/tracks?limit=5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"albums",
+						"1WYGwCvsfFrr7kuQcfNnJr",
+						"tracks"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SelectATrack",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQCMfqx0AiZUaK7n63pLMZKauHAQr8NWL72r-wzW2-ga6jMGDsx4iED4NetvLEOYMuxHSsnLNzK0EeqoHyWLDg8Fue_JclQ1R_2c9dD2J5RLvBJXLb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/tracks/7sZas5ww0qoNF9B5B8ebir",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tracks",
+						"7sZas5ww0qoNF9B5B8ebir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findTrackSch",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQCMfqx0AiZUaK7n63pLMZKauHAQr8NWL72r-wzW2-ga6jMGDsx4iED4NetvLEOYMuxHSsnLNzK0EeqoHyWLDg8Fue_JclQ1R_2c9dD2J5RLvBJXLb8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/artists/2kXKa3aAFngGz2P4GjG5w2/related-artists",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"artists",
+						"2kXKa3aAFngGz2P4GjG5w2",
+						"related-artists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AboutTrackSDM",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAoAuq2D4fM30dt3QezC2qWbQioEoyMLtomXCKIQ_pDxRLVgGU5xMCeI7fQc6umE-nDrsDAYqhGgNSBX92HvX4fXU3f_wUZ9_j5b9ujfZxxt8ZKiHk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/tracks/0EzNyXyU7gHzj2TN8qYThj",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tracks",
+						"0EzNyXyU7gHzj2TN8qYThj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findPodcast",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAoAuq2D4fM30dt3QezC2qWbQioEoyMLtomXCKIQ_pDxRLVgGU5xMCeI7fQc6umE-nDrsDAYqhGgNSBX92HvX4fXU3f_wUZ9_j5b9ujfZxxt8ZKiHk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shows",
+						"6y1PloEyNsCNJH9vHias4T"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listEpisodes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAoAuq2D4fM30dt3QezC2qWbQioEoyMLtomXCKIQ_pDxRLVgGU5xMCeI7fQc6umE-nDrsDAYqhGgNSBX92HvX4fXU3f_wUZ9_j5b9ujfZxxt8ZKiHk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes?limit=3&offset=0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shows",
+						"6y1PloEyNsCNJH9vHias4T",
+						"episodes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RequestOnly2ndEp",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer BQAoAuq2D4fM30dt3QezC2qWbQioEoyMLtomXCKIQ_pDxRLVgGU5xMCeI7fQc6umE-nDrsDAYqhGgNSBX92HvX4fXU3f_wUZ9_j5b9ujfZxxt8ZKiHk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.spotify.com/v1/shows/6y1PloEyNsCNJH9vHias4T/episodes?limit=1&offset=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spotify",
+						"com"
+					],
+					"path": [
+						"v1",
+						"shows",
+						"6y1PloEyNsCNJH9vHias4T",
+						"episodes"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
