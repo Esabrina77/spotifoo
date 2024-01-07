@@ -25,7 +25,9 @@ func MakeApiRequest(url string) ([]byte, error) {
 	}
 
 	//gestion du token (en-tete d'authetification)
+	token := "BQAR39bZyV79MZfqpvxdzLG0z0V2z644LEEiylSlREvcSqdoa95yZspcmPMe6Y9zdk_MhQnfj2o2QJ4pJ0sVe3rLgDikA4Ko0UdPssE7qMiwjJ0g41E"
 
+	req.Header.Set("Authorization", "Bearer"+token)
 	res, err := client.Do(req)
 	if err != nil {
 		return nil, err
@@ -43,7 +45,7 @@ func MakeApiRequest(url string) ([]byte, error) {
 
 //endoint pour la page des albums de jul
 
-func julAlbumHandler(w http.ResponseWriter, r *http.Request) {
+func JulAlbumHandler(w http.ResponseWriter, r *http.Request) {
 
 	//requete vers api se spotify pour obtenir
 	//les infos des albums de jul
