@@ -8,7 +8,7 @@
   <li>Dans le terminal, saisissez la commande suivante et appuyez sur "Enter" :</li>
 </ol>
 
-<pre><code>Allez courir. &#128513;</code></pre>
+<pre><code>Tic Tac. &#128513;</code></pre>
 
 <p>Ensuite, le serveur devrait démarrer et afficher le message :</p>
 <pre><code>Le serveur est en cours d'exécution... CLIQUEZ ICI pour OUVRIR LA PAGE---> <a href="http://localhost:8080/welcome">http://localhost:8080/welcome</a></code></pre>
