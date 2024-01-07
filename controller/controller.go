@@ -2,7 +2,6 @@ package controller
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -13,7 +12,7 @@ import (
 
 const Port = "localhost:8080"
 
-var token = "BQDfStLLoKvj5WTT25OsNmXu5bY1wtlPXW47r9MhOIuqYCmEf5aUVL1-ttbMpQUguki9DItWR_dLEgXMTsyCmPcxjxDHai2HZWaIwdPPzs8JDZ8G_8o"
+var token = "BQD40A1377Yf7wDpRpKL_eh3nGVBGVuN0tWH6RVRuLj50PkXthaJhOzqyYvGByslInPNUdPv6DsjLzHAGTgpJDEOt0qH32U8Ji1Z1-f3_9J0NLbFMtg"
 
 // requete Get vers l'api de spotify
 // et reception des données obtenues
@@ -23,21 +22,24 @@ func MakeApiRequest(url string, token string) ([]byte, error) {
 	}
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
-		return nil, err
+		log.Fatal("log: \tRequest failed!\n", err)
+		manager.PrintColorResult("purple", "log: \tRequest failed!\n")
 	}
 
 	//gestion du token (en-tete d'authetification)
 
-	req.Header.Set("Authorization", "Bearer "+token)
-	res, err := client.Do(req)
-	if err != nil {
-		return nil, err
-	}
-	defer res.Body.Close()
-	body, err := io.ReadAll(res.Body)
+	req.Header.Add("Authorization", "Bearer "+token)
 
-	if err != nil {
-		return nil, err
+	res, errRes := client.Do(req)
+	if res.Body != nil {
+		defer res.Body.Close()
+	} else {
+		log.Fatal("log:\tSending request error!\n", errRes)
+	}
+
+	body, errBody := io.ReadAll(res.Body)
+	if errBody != nil {
+		log.Fatal("Reading body request error !\n", errBody)
 	}
 
 	return body, nil
@@ -58,18 +60,17 @@ func JulAlbumHandler(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		log.Fatal(err)
-		fmt.Println("ERREUR LORS DE LA RECUPERATION DES ALBUMS DE JUL")
+		manager.PrintColorResult("red", "ERREUR LORS DE LA RECUPERATION DES ALBUMS DE JUL")
 	}
 	//Analyse des reponses json
-	var response manager.AlbumResponse
-	err = json.Unmarshal(body, &response)
-
+	var resp manager.AlbumsData
+	err = json.Unmarshal(body, &resp)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	// Réponse : Charger et exécuter le template avec les données d'albums
-	initTemplate.Temp.ExecuteTemplate(w, "jul", response)
+	initTemplate.Temp.ExecuteTemplate(w, "jul", resp)
 
 }
 
@@ -85,7 +86,7 @@ func SdmTrackHandler(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		log.Fatal(err)
-		fmt.Println("ERREUR LORS DE LA RECUPERATION DES ALBUMS DE JUL")
+		manager.PrintColorResult("red", "ERREUR LORS DE LA RECUPERATION DE BOLIDE ALLEMAND")
 	}
 	//Analyse des reponses json
 	var track manager.Tracks

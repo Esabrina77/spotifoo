@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/assets/styles/style.css" >
-    <title>Document</title>
+    <title>Albums de jul</title>
 </head>
 <body>
     <h1>LES ALBUMS DE Jul poto!!</h1>
     <h2>{{.Artist}}</h2>
-    {{range .Albums}}
+    {{range .}}
       <div> 
           <h2>{{.Name}}</h2>
           <img src="{{.Images}}" alt="image de couverture de l'ALBUM">
