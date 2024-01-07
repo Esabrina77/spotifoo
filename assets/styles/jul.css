@@ -3,49 +3,134 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 body{
 color: white;
+font-family: Georgia, 'Times New Roman', Times, serif;
 background-color: sienna;
+position: relative;
+display: flex;
+   flex-direction: column;
 }
 
-.RESULTS{
+
+
+
+.SYNOPSIS{
+    z-index: 1;
+    width: 100%;
+     height: auto;
+     display: flex;
+     position: fixed;
+     align-items: center;
+     justify-content: space-between;
+    border-bottom: groove 2px;
+   background-color: black;
+   }
+   .SYNOPSIS span{
+     padding: 0 10px;
+     border-right: 2px solid rgb(0, 0, 0);
+   }
+   .SYNOPSIS span:last-child{
+     border-right:none;
+   }
+   #SynopsisImage img{
+     width: 120px;
+    height: 120px;
+   }
+   
+   .Start{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: auto;
+     padding:5px;
+     border: 3px;
+     box-shadow: 0 3px 10px rgba(49, 46, 46, 0.1);
+     border-radius: 50px;
+   }
+   .Start img{
+     border-radius: 50%;
+     width: 60px;
+     height: 60px;
+   }
+   
+   /* ESPACE PROFIL UTILISATEUR */
+   #infosProfil{
+     display: flex;
+     align-items: center;
+     width: auto;
+     height: auto;
+     padding: 5px;
+    gap: 10px;
+   }
+ 
+/* les albums*/
+.AllProduct{
     margin-top: 160px; /* vu que le js n'intervient pas encore,on va le positionner dynamiquement */
     flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
- }
-  .album{
-    width: auto;
-   display: flex;
-   flex-direction: column;
-   margin-right: 20px;
-   margin-bottom: 20px;
-   }
-   .album img:last-child{
-     margin-right: 0;
-   }
-
-   .albumImg{
+    background-color: blue;
+  }
+  .PRODUCT{
+    background-color: brown;
+   width: 300px;
+   height: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  }
+  .PRODUCT img:last-child{
+    margin-right: 0;
+  }
+  
+  
+  /* /LES IMAGES DE CHAQUE LIEUX  */
+  .IMAGE{
     position: relative;
   }
-  .albumImg{
-    border-color: black;
-    width: 350px;
+  .IMAGE img{
+    width:100%;
     height: 255px;
     border-radius: 20px;
   }
+  
+  /* POSITION DU COEUR (LIKE) */
+  #Like{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  #Like img{
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* */
   #TEXT{
     padding: 0 5px;
     position: relative;
     display: flex;
     flex-direction: column;
   }
-  #TEXT p{
+  #TEXT span{
     margin-bottom: 10px;
   }
   
-   
+  /*  */
+  .STARS{
+    position: absolute;
+    display: flex;
+    font-size: 12px;
+    top: 0;
+    right: 5%;
+  }
+  .STARS img{
+    margin: 2px;
+    width: 20px;
+    height: 20px;
+  }

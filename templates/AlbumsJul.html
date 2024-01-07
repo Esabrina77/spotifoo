@@ -9,37 +9,37 @@
 </head>
 <body>
     
-    <!-- <div class="SYNOPSIS"> 
+    <div class="SYNOPSIS"> 
         <div id="SynopsisImage">
-         <a href="/home"> <img src="../CSS/icons/LOGO2AIRBNB.png" alt="logo-airbnb-1536"> </a>
+         <a href="/welcome"> <img src="/assets/icons/Spotify-Emblema.png" alt="logo musice"> </a>
     </div>
 
         <div class="Start">
-   <span>N'importe où</span>
-   <span>Une semaine</span>
-   <span>Ajouter des voyageurs</span>
-   <img src="../CSS/icons/glass_lens_loupe_love_magnifying_search_zoom_icon_146722.png" alt="loupe">
+   <span>C'est</span>
+   <span>Marseille</span>
+   <span>bébé</span>
+   <img src="/assets/icons/music_note_FILL0_wght400_GRAD0_opsz24.png" alt="loupe">
         </div>
    
      <div id="infosProfil">
-       <p>Mettre mon logement sur Airbnb</p> 
+       <p>M</p> 
        <img src="/CSS/icons/WORLD.png" alt="UNE MAP">
 
           <div id="LoginProfil">
-           <div id="select"><p>MOM</p></div>
             <img src="/CSS/icons/PROFIL.png" alt="Profil_Icon">
           </div>
 
      </div>
+</div>
 
-</div> -->
-
-    <h1>LES ALBUMS DE Jul poto!!</h1>
-    <div class="RESULTS">
+    <div class="AllProduct">
         {{range .Items}}
-            <div class="album">
+            <div class="PRODUCT">
                 {{$name := .Name}}
-                <div class="albumImg">
+
+                <div class="IMAGE">
+                    <div id="Like"> <img src="/assets/icons/coeur.png" ></div>
+		
                     {{range $index, $element := .Images}}
                         {{if eq 0 $index}}
                             <img src="{{$element.Url}}" alt="Jul Album Image: {{$name}}" style="width: 10rem"/>
@@ -52,10 +52,10 @@
                     <div>
                         <div>Sorti le : {{.ReleaseDate}}</div>
                       
-                        <div class="STARS"> 
-                            <p>{{.TotalTracks}} pistes</p> 
-                            <img src="/CSS/icons/etoile-en-noir-de-forme-a-cinq-points.png" alt="Image appartements">
-                        </div>
+                     <div class="STARS"> 
+                            <span>{{.TotalTracks}} pistes
+                            <img src="/assets/icons/music_note_FILL0_wght400_GRAD0_opsz24.png" alt="icone musique">
+                        </span>
                     </div>
                 </div>
             </div>
