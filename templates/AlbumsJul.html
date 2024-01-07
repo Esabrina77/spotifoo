@@ -4,27 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/assets/styles/style.css" >
+    <link rel="stylesheet" type="text/css" href="/assets/styles/jul.css" >
     <title>Albums de jul</title>
 </head>
 <body>
+    
+    <!-- <div class="SYNOPSIS"> 
+        <div id="SynopsisImage">
+         <a href="/home"> <img src="../CSS/icons/LOGO2AIRBNB.png" alt="logo-airbnb-1536"> </a>
+    </div>
+
+        <div class="Start">
+   <span>N'importe où</span>
+   <span>Une semaine</span>
+   <span>Ajouter des voyageurs</span>
+   <img src="../CSS/icons/glass_lens_loupe_love_magnifying_search_zoom_icon_146722.png" alt="loupe">
+        </div>
+   
+     <div id="infosProfil">
+       <p>Mettre mon logement sur Airbnb</p> 
+       <img src="/CSS/icons/WORLD.png" alt="UNE MAP">
+
+          <div id="LoginProfil">
+           <div id="select"><p>MOM</p></div>
+            <img src="/CSS/icons/PROFIL.png" alt="Profil_Icon">
+          </div>
+
+     </div>
+
+</div> -->
+
     <h1>LES ALBUMS DE Jul poto!!</h1>
-    <div class="query-results">
+    <div class="RESULTS">
         {{range .Items}}
             <div class="album">
                 {{$name := .Name}}
-                <div class="album-img">
+                <div class="albumImg">
                     {{range $index, $element := .Images}}
                         {{if eq 0 $index}}
                             <img src="{{$element.Url}}" alt="Jul Album Image: {{$name}}" style="width: 10rem"/>
                         {{end}}
                     {{end}}
                 </div>
-                <div class="album-info">
+
+                <div class="TEXT">
                     <h3>{{$name}}</h3>
                     <div>
                         <div>Sorti le : {{.ReleaseDate}}</div>
-                        <div>{{.TotalTracks}} pistes</div>
+                      
+                        <div class="STARS"> 
+                            <p>{{.TotalTracks}} pistes</p> 
+                            <img src="/CSS/icons/etoile-en-noir-de-forme-a-cinq-points.png" alt="Image appartements">
+                        </div>
                     </div>
                 </div>
             </div>

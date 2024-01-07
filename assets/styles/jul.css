@@ -17,4 +17,35 @@ background-color: sienna;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+ }
+  .album{
+    width: auto;
+   display: flex;
+   flex-direction: column;
+   margin-right: 20px;
+   margin-bottom: 20px;
+   }
+   .album img:last-child{
+     margin-right: 0;
+   }
+
+   .albumImg{
+    position: relative;
   }
+  .albumImg{
+    border-color: black;
+    width: 350px;
+    height: 255px;
+    border-radius: 20px;
+  }
+  #TEXT{
+    padding: 0 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  #TEXT p{
+    margin-bottom: 10px;
+  }
+  
+   
