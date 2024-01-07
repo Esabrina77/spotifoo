@@ -132,7 +132,7 @@ display: flex;
   border-radius: 50px;
   width: 200px;
   height: auto;
-  padding: 2px 5px;
+  padding: 2px 8px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -145,9 +145,22 @@ display: flex;
 }
 
 #Bottom img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  margin: 2px;
 }
-a{
+a {
+  display: inline-block;
+  background-color: #ff6600;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px;
   text-decoration: none;
-}
+  border-radius: 5px;
+  margin-top: 20px;
+  }
+  
+  a:hover {
+  background-color: #000000;
+  } 

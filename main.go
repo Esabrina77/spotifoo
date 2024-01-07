@@ -12,10 +12,7 @@ func main() {
 
 	fmt.Println("")
 	manager.PrintColorResult("yellow", "CLICK HERE to OPEN JUL PAGE--->")
-	manager.PrintColorResult("blue", " http://localhost:8080/jul \n")
-	fmt.Println("")
-	manager.PrintColorResult("yellow", "CLICK HERE to OPEN SDM PAGE--->")
-	manager.PrintColorResult("blue", " http://localhost:8080/sdm \n")
+	manager.PrintColorResult("blue", " http://localhost:8080/welcome \n")
 	fmt.Println("")
 	manager.PrintColorResult("green", "TO STOP THE SERVER , PRESS  'ctrl+C' ")
 	initTemplate.InitTemplate()

@@ -18,6 +18,7 @@ var token = "BQBLzyK_UOk-hDc2yIDh9fNCwVCtR4PzEqXUuIMs8GaqUpymwSt0zOg6e3eiESAmD4g
 
 // requete Get vers l'api de spotify
 // et reception des données obtenues
+
 func MakeApiRequest(url string, token string) ([]byte, error) {
 	client := http.Client{
 		Timeout: time.Second * 10,
@@ -103,4 +104,9 @@ func SdmTrackHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Réponse : Charger et exécuter le template avec les données du titre
 	initTemplate.Temp.ExecuteTemplate(w, "sdm", track)
+}
+
+func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
+
+	initTemplate.Temp.ExecuteTemplate(w, "welcome", nil)
 }
