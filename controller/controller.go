@@ -2,6 +2,7 @@ package controller
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -12,7 +13,7 @@ import (
 
 const Port = "localhost:8080"
 
-var token = "BQD40A1377Yf7wDpRpKL_eh3nGVBGVuN0tWH6RVRuLj50PkXthaJhOzqyYvGByslInPNUdPv6DsjLzHAGTgpJDEOt0qH32U8Ji1Z1-f3_9J0NLbFMtg"
+var token = "BQC2rtfEC6C1dNd-MFK0CxP7oF3vPZivtwqbpgiY3Sa_-BDyce0oqV7WGBgM6ZIVkqpd7LdtNm8RkhZsHMA3ZYA3HMCDZeuq1zsUrlFMsYY66WIiogY"
 
 // requete Get vers l'api de spotify
 // et reception des données obtenues
@@ -69,6 +70,8 @@ func JulAlbumHandler(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
+	fmt.Printf("makeApiRequest()\tbody: %#v\n", resp)
+
 	// Réponse : Charger et exécuter le template avec les données d'albums
 	initTemplate.Temp.ExecuteTemplate(w, "jul", resp)
 
@@ -89,12 +92,13 @@ func SdmTrackHandler(w http.ResponseWriter, r *http.Request) {
 		manager.PrintColorResult("red", "ERREUR LORS DE LA RECUPERATION DE BOLIDE ALLEMAND")
 	}
 	//Analyse des reponses json
-	var track manager.Tracks
+	var track manager.TrackData
 	err = json.Unmarshal(body, &track)
-
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Printf("makeApiRequest()\tbody: %#v\n", track)
 
 	// Réponse : Charger et exécuter le template avec les données du titre
 	initTemplate.Temp.ExecuteTemplate(w, "sdm", track)

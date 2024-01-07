@@ -6,12 +6,20 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/CSS/home.css" >
-    <title>Document</title>
+    <title>Bolide allemand</title>
 
 </head>
 <body>
-    
+    <h1>MUSIQUE DE SDM </h1>
+    <h2>{{.Name}}</h2>
+    <img src="{{Album.Images.0.Url}}" alt="cover image">
+
+    <p> ALBUM: {{.Album.Name}}</p>
+    <p>Artiste: {{.range .Artists}} {{.Name}}, 
+        {{end}}
+    </p>
+    <p>Date de sortie: {{.Album.ReleaseDate}}</p>
+    <a href="{{.ExternalUrls.Spotify}}"> Ecouter sur Spotify</a>
 </body>
 </html>
-
 {{end}}

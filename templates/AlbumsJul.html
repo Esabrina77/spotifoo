@@ -9,15 +9,28 @@
 </head>
 <body>
     <h1>LES ALBUMS DE Jul poto!!</h1>
-    <h2>{{.Artist}}</h2>
-    {{range .}}
-      <div> 
-          <h2>{{.Name}}</h2>
-          <img src="{{.Images}}" alt="image de couverture de l'ALBUM">
-          <h3>Date de sortie: {{.ReleaseDate}}</h3>
-          <h3>Nombre de Musiques: {{.TotalTracks}}</h3>
-      </div>
-    {{end}}
+    <div class="query-results">
+        {{range .Items}}
+            <div class="album">
+                {{$name := .Name}}
+                <div class="album-img">
+                    {{range $index, $element := .Images}}
+                        {{if eq 0 $index}}
+                            <img src="{{$element.Url}}" alt="Jul Album Image: {{$name}}" style="width: 10rem"/>
+                        {{end}}
+                    {{end}}
+                </div>
+                <div class="album-info">
+                    <h3>{{$name}}</h3>
+                    <div>
+                        <div>Sorti le : {{.ReleaseDate}}</div>
+                        <div>{{.TotalTracks}} pistes</div>
+                    </div>
+                </div>
+            </div>
+        {{end}}
+    </div>
+    
 </body>
 </html>
 
