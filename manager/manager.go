@@ -16,7 +16,5 @@ type Tracks struct {
 	AlbumName   string `json:"album_name"`
 	ArtistName  string `json:"artist_name"`
 	ReleaseDate string `json:"release_date"`
-	ID          string `json:"id"`
-	DiscNumber  int    `json:"disc_number"`
-	Explicit    bool   `json:"explicit"`
+	ExternalURL string `json:"external_url"`
 }

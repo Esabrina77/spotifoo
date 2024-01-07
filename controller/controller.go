@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"spotifoo/manager"
+	initTemplate "spotifoo/templates"
 	"time"
 )
 
@@ -62,6 +63,33 @@ func julAlbumHandler(w http.ResponseWriter, r *http.Request) {
 		return nil, err
 	}
 
-	// Réponse : envoie du template avec les données au client
-	initTemplate.Temp.ExecuteTemplate(w, "home", Screen)
+	// Réponse : Charger et exécuter le template avec les données d'albums
+	initTemplate.Temp.ExecuteTemplate(w, "jul", albums)
+}
+
+// endoint pour la page de la musique "Bolide allemand"
+func SdmTrackHandler(w http.ResponseWriter, r *http.Request) {
+
+	//requete vers api se spotify pour obtenir
+	//les infos de la musique "bolide allemand"
+
+	//ID Du titre "bolide allemand " = 0EzNyXyU7gHzj2TN8qYThj
+	url := "https://api.spotify.com/v1/tracks/0EzNyXyU7gHzj2TN8qYThj"
+
+	body, err := MakeApiRequest(url)
+
+	if err != nil {
+		log.Fatal(err)
+		fmt.Println("ERREUR LORS DE LA RECUPERATION DES ALBUMS DE JUL")
+	}
+	//Analyse des reponses json
+	var albums []manager.Album
+	err = json.Unmarshal(body, &albums)
+
+	if err != nil {
+		return nil, err
+	}
+
+	// Réponse : Charger et exécuter le template avec les données d'albums
+	initTemplate.Temp.ExecuteTemplate(w, "jul", albums)
 }
